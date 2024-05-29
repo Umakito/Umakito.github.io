@@ -1,0 +1,158 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #1c1c1e;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.homepage-container {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  position: absolute;
+  top: 0;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 20px;
+  height: 10px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.nav-link {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+.nav-link:hover {
+  opacity: 1;
+}
+
+.sign-in-btn {
+  background-color: #86a9ff;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  margin-left: 5px;
+  transition: background-color 0.5s;
+}
+
+.sign-in-btn:hover {
+  background-color: #648ffa;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  width: 90%;
+}
+
+.content {
+  text-align: left;
+  max-width: 50%;
+}
+
+.content h1 {
+  font-size: 64px;
+  color: #86a9ff;
+  margin-bottom: 10px;
+}
+
+.content p {
+  font-size: 19px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  margin: 5px;
+  color: #e0e0e0;
+  transition: background-color 0.5s;
+}
+
+.sign-in-btn.large {
+  font-size: 20px;
+  padding: 15px 30px;
+  font-weight: bold;
+}
+
+.image-container {
+  max-width: 100%;
+}
+
+.image-container img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+footer {
+  width: 100%;
+  text-align: left;
+  background-color: #232325;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #d3d3d3;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 17px;
+}
+
+
+.zoom {
+  animation: zoom-in 1s ease-out;
+}
+
+@keyframes zoom-in {
+  from {
+    transform: scale(0.8); /* Tamanho inicial do zoom */
+    opacity: 0; /* Começa invisível */
+  }
+  to {
+    transform: scale(1); /* Tamanho final do zoom */
+    opacity: 1; /* Torna-se visível */
+  }
+}
+
+/* Seu CSS existente */
+
+.fade-in {
+  opacity: 0;
+  animation: fade-in 1s ease-in-out forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
