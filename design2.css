@@ -1,6 +1,6 @@
 body {
     font-family: "Roboto", sans-serif;
-    background-color: #1c1c1e;
+    background-color: #2A363B;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-    background-color: #131314;
+    background-color: rgb(28, 34, 37);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -38,13 +38,13 @@ nav {
     color: #fff;
     text-decoration: none;
     padding: 10px 15px;
-    background-color: #0056b3;
+    background-color: #378581;
     border-radius: 5px;
     transition: background-color 0.3s;
 }
 
 .nav-link:hover, .sign-in-btn:hover {
-    background-color: #004080;
+    background-color: #265e5b;
 }
 
 .video-container {
@@ -63,7 +63,7 @@ nav {
 }
 
 .video-description-container {
-    background-color: #242527;
+    background-color: #2A363B;
     color: #d3d3d3;
     padding: 10px;
     border-radius: 5px;
@@ -96,7 +96,7 @@ nav {
 
 .prev-btn, .next-btn {
     padding: 10px 20px;
-    background-color: #0056b3;
+    background-color: #378581;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -104,7 +104,7 @@ nav {
 }
 
 .prev-btn:hover, .next-btn:hover {
-    background-color: #004080;
+    background-color: #265e5b;
 }
 
 /* width */
@@ -122,3 +122,4 @@ nav {
   ::-webkit-scrollbar-thumb:hover {
     background: #313131; 
   }
+

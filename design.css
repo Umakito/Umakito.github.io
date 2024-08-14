@@ -1,7 +1,14 @@
-body {
+html, body {
   margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+body {
   font-family: "Roboto", sans-serif;
-  background-color: #1c1c1e;
+  background-color: #2A363B;
   color: #ffffff;
   display: flex;
   justify-content: center;
@@ -10,12 +17,13 @@ body {
 }
 
 .homepage-container {
-  width: 90%;
-  max-width: 1200px;
+  width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  overflow: hidden; /* Para garantir que o conteúdo não crie barras de rolagem */
 }
 
 header {
@@ -32,7 +40,6 @@ header {
   font-size: 24px;
   font-weight: bold;
   margin-left: 20px;
-  height: 10px;
 }
 
 nav {
@@ -53,18 +60,37 @@ nav {
 }
 
 .sign-in-btn {
-  background-color: #86a9ff;
-  color: #ffffff;
+  background-color: #45ADA8;
+  color: #E5FCC2;
   padding: 10px 20px;
   border: none;
   border-radius: 50px;
   text-decoration: none;
   margin-left: 5px;
   transition: background-color 0.5s;
+  position: relative; /* Para posicionar o ::after corretamente */
+}
+
+.sign-in-btn:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.sign-in-btn:hover span {
+  padding-right: 25px;
 }
 
 .sign-in-btn:hover {
-  background-color: #648ffa;
+  background-color: #378581;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 
 main {
@@ -78,51 +104,60 @@ main {
 .content {
   text-align: left;
   max-width: 50%;
+  padding-left: 100px; /* Adiciona um padding à esquerda para deslocar o conteúdo para a direita */
 }
 
 .content h1 {
+  font-family: "Lucida Console", "Courier New", monospace;
   font-size: 64px;
-  color: #86a9ff;
-  margin-bottom: 10px;
+  color: #E5FCC2;
+  margin-bottom: 5px; /* Reduzido de 10px para 5px */
 }
 
 .content p {
   font-size: 19px;
   font-weight: 600;
-  margin-bottom: 15px;
-  margin: 5px;
-  color: #e0e0e0;
+  color: #45ADA8;
   transition: background-color 0.5s;
+}
+
+.content p:nth-of-type(1) {
+  margin-bottom: 5px; /* Ajusta a margem inferior do primeiro parágrafo */
+}
+
+.content p:nth-of-type(2) {
+  margin-top: 0; /* Remove a margem superior do segundo parágrafo */
 }
 
 .sign-in-btn.large {
   font-size: 20px;
-  padding: 15px 30px;
+  padding: 12px 25px; /* Reduzido de 15px 30px para 12px 25px */
   font-weight: bold;
 }
 
 .image-container {
   max-width: 100%;
+  display: flex;
+  justify-content: flex-end; /* Move a imagem para a esquerda */
 }
 
 .image-container img {
-  width: 100%;
   border-radius: 10px;
+  margin-right: 20px; /* Ajusta a margem para mover a imagem suavemente para a esquerda */
 }
 
 footer {
   width: 100%;
   text-align: left;
-  background-color: #232325;
+  background-color: #1d2529;
   padding-top: 10px;
   padding-bottom: 10px;
-  color: #d3d3d3;
+  color: #378a86;
   position: absolute;
   bottom: 0;
   left: 0;
   font-size: 17px;
 }
-
 
 .zoom {
   animation: zoom-in 1s ease-out;
@@ -130,16 +165,14 @@ footer {
 
 @keyframes zoom-in {
   from {
-    transform: scale(0.8); /* Tamanho inicial do zoom */
-    opacity: 0; /* Começa invisível */
+    transform: scale(0.8); 
+    opacity: 0; 
   }
   to {
-    transform: scale(1); /* Tamanho final do zoom */
-    opacity: 1; /* Torna-se visível */
+    transform: scale(1); 
+    opacity: 1; 
   }
 }
-
-/* Seu CSS existente */
 
 .fade-in {
   opacity: 0;
@@ -155,4 +188,18 @@ footer {
   }
 }
 
+@keyframes float {
+  0% {
+      transform: translateY(0px);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+  100% {
+      transform: translateY(0px);
+  }
+}
 
+.float {
+  animation: float 3s ease-in-out infinite;
+}
